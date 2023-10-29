@@ -1,10 +1,9 @@
-import Geolocation from './components/Geolocation'
 import SpeechToText from './components/SpeechToText'
 
 const App = () => {
 	return (
 		<div>
-			<Geolocation />
+			<h1>Voice Temp</h1>
 			<SpeechToText />
 		</div>
 	)
