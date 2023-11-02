@@ -54,6 +54,7 @@ const Geolocation = ({ weatherDate, listening }) => {
 
 	useEffect(() => {
 		setError('')
+		setWeather({})
 
 		if (!listening && coords && weatherDate) {
 			fetchLocationInfo()
@@ -61,7 +62,7 @@ const Geolocation = ({ weatherDate, listening }) => {
 	}, [weatherDate, listening])
 
 	return (
-		<div>
+		<div className="info-display">
 			{error ? (
 				<p>{error}</p>
 			) : (

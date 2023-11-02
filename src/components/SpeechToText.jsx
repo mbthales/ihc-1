@@ -5,13 +5,12 @@ import { useEffect, useState } from 'react'
 
 import Geolocation from './Geolocation'
 
+import microfone from '../images/microfone.png'
+import microfoneOff from '../images/microfone-off.png'
+
 const SpeechToText = () => {
-	const {
-		transcript,
-		listening,
-		resetTranscript,
-		browserSupportsSpeechRecognition,
-	} = useSpeechRecognition()
+	const { transcript, listening, browserSupportsSpeechRecognition } =
+		useSpeechRecognition()
 	const [weatherDate, setWeatherDate] = useState('')
 
 	useEffect(() => {
@@ -36,11 +35,17 @@ const SpeechToText = () => {
 
 	return (
 		<div>
-			<p>Microphone: {listening ? 'on' : 'off'}</p>
-			<button onClick={SpeechRecognition.startListening}>Start</button>
-			<button onClick={SpeechRecognition.stopListening}>Stop</button>
-			<button onClick={resetTranscript}>Reset</button>
-			<p>{transcript}</p>
+			<div className="microfone-box">
+				{listening ? (
+					<img src={microfone} onClick={SpeechRecognition.stopListening} />
+				) : (
+					<img
+						src={microfoneOff}
+						onClick={SpeechRecognition.startListening}
+					/>
+				)}
+			</div>
+
 			<Geolocation weatherDate={weatherDate} listening={listening} />
 		</div>
 	)

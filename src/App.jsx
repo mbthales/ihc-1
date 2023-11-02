@@ -2,10 +2,10 @@ import SpeechToText from './components/SpeechToText'
 
 const App = () => {
 	return (
-		<div>
-			<h1>Voice Temp</h1>
+		<main>
+			<h1 className="title">Voice Temp</h1>
 			<SpeechToText />
-		</div>
+		</main>
 	)
 }
 
