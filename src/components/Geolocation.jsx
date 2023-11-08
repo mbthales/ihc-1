@@ -12,10 +12,9 @@ const Geolocation = ({ weatherDate, listening }) => {
 		positionOptions: {
 			enableHighAccuracy: true,
 		},
-		userDecisionTimeout: 5000,
 	})
 
-	const fetchLocationInfo = async () => {
+	const fetchLocationAndWeatherInfo = async () => {
 		const key = import.meta.env.VITE_WEATHER_API_KEY
 
 		const latitude = coords.latitude
@@ -57,7 +56,7 @@ const Geolocation = ({ weatherDate, listening }) => {
 		setWeather({})
 
 		if (!listening && coords && weatherDate) {
-			fetchLocationInfo()
+			fetchLocationAndWeatherInfo()
 		}
 	}, [weatherDate, listening])
 
