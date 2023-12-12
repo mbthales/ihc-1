@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@500&display=swap');
+
 * {
 	box-sizing: border-box;
 	line-height: 1.25;
@@ -11,6 +13,8 @@ body,
 #root {
 	height: 100%;
 	width: 100%;
+	color: #f1faee;
+	background-color: #1d3557;
 }
 
 html {
@@ -29,21 +33,52 @@ main {
 
 .title {
 	font-size: 4rem;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	text-align: center;
+	font-family: 'Poppins', sans-serif;
 }
 
 .microfone-box {
 	position: absolute;
 	right: -5rem;
 	top: 35px;
+	cursor: pointer;
 }
 
-.microfone-box > img {
+.microfone-box > svg {
 	width: 50px;
 	height: 50px;
+	fill: #f1faee;
 }
 
 .info-display {
+	font-size: 1.2rem;
 	text-align: center;
+	color: #f1faee;
+	font-family: 'Lora', serif;
+}
+
+.info-display .container > p,
+div {
+	margin-bottom: 0.2rem;
+}
+
+@media (max-width: 425px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.microfone-box {
+		right: 0rem;
+		top: -30px;
+	}
+
+	.microfone-box > svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.info-display {
+		font-size: 0.8rem;
+	}
 }

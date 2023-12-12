@@ -66,7 +66,7 @@ const Geolocation = ({ weatherDate, listening }) => {
 				<p>{error}</p>
 			) : (
 				Object.keys(weather).length > 0 && (
-					<div>
+					<div className="container">
 						<div>{location.country}</div>
 						<div>{location.region}</div>
 						<div>{location.city}</div>
